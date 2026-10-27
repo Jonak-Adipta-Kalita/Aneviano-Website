@@ -1,10 +1,47 @@
 @import "tailwindcss";
 
-@theme inline {
+@theme {
     --font-ubuntu: var(--font-ubuntu-sans);
     --font-orbitron: var(--font-oribtron);
+
+    --color-base: #0f0d0b;
+    --color-bg: #1a1613;
+    --color-surface: #262019;
+    --color-border: #352c22;
+
+    --color-orange: #ff8a1f;
+    --color-orange-light: #ffa94d;
+    --color-orange-deep: #e86a00;
+    --color-orange-muted: #b34e00;
+
+    --color-fg: #f5ebdd;
+    --color-fg-muted: #b8a896;
+    --color-fg-faint: #7a6b5a;
+
+    --color-amber: #ffd166;
+    --color-danger: #e5484d;
+    --color-success: #7fb069;
+
+    @keyframes flick {
+        from {
+            transform: scaleY(0.85) scaleX(0.94);
+        }
+        to {
+            transform: scaleY(1.12) scaleX(1.06);
+        }
+    }
 }
 
 html.start-bottom body {
     visibility: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
 }
