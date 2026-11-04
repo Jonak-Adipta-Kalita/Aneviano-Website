@@ -9,32 +9,32 @@ import { StarsBackground } from "@src/components/ui/stars-background";
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
 const fontUbuntu = Ubuntu({
-    weight: "500",
+	weight: "500",
 });
 
 export const metadata: Metadata = {
-    title: "ανεβαίνω",
-    description: "To go up",
+	title: "ανεβαίνω",
+	description: "To go up",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
-    return (
-        <html
-            lang="en"
-            className={cn(
-                "h-full",
-                "antialiased",
-                fontUbuntu.className,
-                "font-sans",
-                geist.variable
-            )}
-            suppressHydrationWarning
-        >
-            <body className="bg-base text-fg relative flex min-h-full flex-col">
-                {children}
-                <ShootingStars />
-                <StarsBackground />
-            </body>
-        </html>
-    );
+	return (
+		<html
+			lang="en"
+			className={cn(
+				"h-full",
+				"antialiased",
+				fontUbuntu.className,
+				"font-sans",
+				geist.variable
+			)}
+			suppressHydrationWarning
+		>
+			<body className="bg-base text-fg relative flex min-h-full flex-col">
+				{children}
+				<ShootingStars />
+				<StarsBackground />
+			</body>
+		</html>
+	);
 }
