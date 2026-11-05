@@ -1,3 +1,3 @@
 export default function WorkPage() {
-	return <div></div>
+    return <div></div>;
 }

@@ -9,22 +9,6 @@
     --font-orbitron: var(--font-oribtron);
 
     --color-base: #0f0d0b;
-    --color-bg: #1a1613;
-    --color-surface: #262019;
-    --color-border: #352c22;
-
-    --color-orange: #ff8a1f;
-    --color-orange-light: #ffa94d;
-    --color-orange-deep: #e86a00;
-    --color-orange-muted: #b34e00;
-
-    --color-fg: #f5ebdd;
-    --color-fg-muted: #b8a896;
-    --color-fg-faint: #7a6b5a;
-
-    --color-amber: #ffd166;
-    --color-danger: #e5484d;
-    --color-success: #7fb069;
 
     @keyframes flick {
         from {
