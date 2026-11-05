@@ -155,7 +155,7 @@ html {
 }
 
 @layer base {
-	::selection {
-		@apply bg-gray-200 text-base;
-	}
+    ::selection {
+        @apply bg-gray-200 text-base;
+    }
 }

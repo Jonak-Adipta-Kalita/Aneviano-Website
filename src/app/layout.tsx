@@ -9,38 +9,38 @@ import { StarsBackground } from "@src/components/ui/stars-background";
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
 const fontUbuntu = Ubuntu({
-	weight: "500",
+    weight: "500",
 });
 
 const fontOrbitron = Orbitron({
-	subsets: ["latin"],
-	variable: "--font-orbitron",
+    subsets: ["latin"],
+    variable: "--font-orbitron",
 });
 
 export const metadata: Metadata = {
-	title: "ανεβαίνω",
-	description: "To go up",
+    title: "ανεβαίνω",
+    description: "To go up",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
-	return (
-		<html
-			lang="en"
-			className={cn(
-				"h-full scrollbar-hidden scrollbar-thin scrollbar-thumb-neutral-800 scrollbar-track-transparent scrollbar-hover:scrollbar-thumb-neutral-700",
-				"antialiased",
-				fontUbuntu.className,
-				fontOrbitron.className,
-				"font-sans",
-				geist.variable
-			)}
-			suppressHydrationWarning
-		>
-			<body className="bg-base relative flex min-h-full flex-col">
-				{children}
-				<ShootingStars />
-				<StarsBackground />
-			</body>
-		</html>
-	);
+    return (
+        <html
+            lang="en"
+            className={cn(
+                "scrollbar-hidden scrollbar-hover:scrollbar-thumb-neutral-700 h-full scrollbar-thin scrollbar-thumb-neutral-800 scrollbar-track-transparent",
+                "antialiased",
+                fontUbuntu.className,
+                fontOrbitron.className,
+                "font-sans",
+                geist.variable
+            )}
+            suppressHydrationWarning
+        >
+            <body className="bg-base relative flex min-h-full flex-col">
+                {children}
+                <ShootingStars />
+                <StarsBackground />
+            </body>
+        </html>
+    );
 }
