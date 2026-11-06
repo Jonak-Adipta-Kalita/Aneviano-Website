@@ -6,6 +6,9 @@ import TeamSection from "./home/TeamSection";
 import VisionSection from "./home/VisionSection";
 import WorksSection from "./home/WorksSection";
 import ContactSection from "./home/ContactSection";
+import StartAtBottom from "./StartAtBottom";
+import Loader from "@src/components/loader/Loader";
+import { LoaderProvider } from "@src/components/loader/LoaderContext";
 
 export default function Home() {
     return (
@@ -21,16 +24,22 @@ export default function Home() {
 
             <ScrollOnNavigate />
 
-            <div className="relative z-10 flex min-h-full flex-col">
-                <SmoothScroll>
-                    <ContactSection />
-                    <WorksSection />
-                    <TeamSection />
-                    <VisionSection />
-                    <HomeSection />
-                    <FooterHeader />
-                </SmoothScroll>
-            </div>
+            <LoaderProvider>
+                <Loader />
+                <ScrollOnNavigate />
+
+                <div className="relative z-10 flex min-h-full flex-col">
+                    <SmoothScroll>
+                        <ContactSection />
+                        <WorksSection />
+                        <TeamSection />
+                        <VisionSection />
+                        <HomeSection />
+                        <FooterHeader />
+                        <StartAtBottom />
+                    </SmoothScroll>
+                </div>
+            </LoaderProvider>
 
             <script
                 dangerouslySetInnerHTML={{

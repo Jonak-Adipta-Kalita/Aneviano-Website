@@ -1,18 +1,28 @@
 "use client";
 
 import { useGSAP } from "@gsap/react";
+import { useLoader } from "@src/components/loader/LoaderContext";
 import gsap from "gsap";
 import { useLenis } from "lenis/react";
 import { useRef } from "react";
 
-export const NAV_ITEMS = ["Home", "Vision", "Works", "Team", "Contact"];
+export const NAV_ITEMS = [
+    "Home",
+    "Vision",
+    "Works",
+    "Team",
+    "Contact",
+] as const;
 
 export default function FooterHeader() {
     const lenis = useLenis();
     const container = useRef(null);
+    const { ready } = useLoader();
 
     useGSAP(
         () => {
+            if (ready) return;
+
             gsap.fromTo(
                 "#nav-btn",
                 { y: 24, autoAlpha: 0 },
@@ -22,7 +32,7 @@ export default function FooterHeader() {
                     duration: 0.6,
                     ease: "power1.out",
                     stagger: 0.08,
-                    delay: 0.3,
+                    delay: 0.4,
                 }
             );
         },
@@ -45,7 +55,7 @@ export default function FooterHeader() {
                         })
                     }
                     id="nav-btn"
-                    className="font-orbitron invisible relative cursor-pointer touch-manipulation rounded-2xl px-5 py-3 text-sm text-gray-400 transition-colors select-none after:absolute after:right-5 after:bottom-2 after:left-5 after:h-px after:origin-left after:scale-x-0 after:bg-current after:transition-transform after:duration-300 after:ease-out hover:text-gray-200 hover:after:scale-x-100 md:text-2xl"
+                    className="font-orbitron invisible relative cursor-pointer touch-manipulation rounded-2xl px-2 py-3 text-sm text-gray-400 transition-colors select-none after:absolute after:right-5 after:bottom-2 after:left-5 after:h-px after:origin-left after:scale-x-0 after:bg-current after:transition-transform after:duration-300 after:ease-out hover:text-gray-200 hover:after:scale-x-100 md:px-5 md:text-2xl"
                 >
                     {nav}
                 </button>
