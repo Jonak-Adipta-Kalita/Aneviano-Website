@@ -1,5 +1,11 @@
-import ScrollOnNavigate from "./home/ScrollOnNavigate";
-import Body from "./home/HomePage";
+import ScrollOnNavigate from "./ScrollOnNavigate";
+import SmoothScroll from "@src/components/SmoothScroll";
+import FooterHeader from "./home/FooterHeader";
+import HomeSection from "./home/HomeSection";
+import TeamSection from "./home/TeamSection";
+import VisionSection from "./home/VisionSection";
+import WorksSection from "./home/WorksSection";
+import ContactSection from "./home/ContactSection";
 
 export default function Home() {
     return (
@@ -15,8 +21,15 @@ export default function Home() {
 
             <ScrollOnNavigate />
 
-            <div className="relative z-10">
-                <Body />
+            <div className="relative z-10 flex min-h-full flex-col-reverse">
+                <SmoothScroll>
+                    <FooterHeader />
+                    <HomeSection />
+                    <VisionSection />
+                    <TeamSection />
+                    <WorksSection />
+                    <ContactSection />
+                </SmoothScroll>
             </div>
 
             <script
