@@ -4,7 +4,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef, useState } from "react";
 
-export default function TypeWriter({ content }: { content: string }) {
+export default function Typewriter({ content }: { content: string }) {
     const [display, setDisplay] = useState("");
     const counter = useRef({ i: 0 });
 
