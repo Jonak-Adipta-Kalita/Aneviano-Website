@@ -21,14 +21,14 @@ export default function Home() {
 
             <ScrollOnNavigate />
 
-            <div className="relative z-10 flex min-h-full flex-col-reverse">
+            <div className="relative z-10 flex min-h-full flex-col">
                 <SmoothScroll>
-                    <FooterHeader />
-                    <HomeSection />
-                    <VisionSection />
-                    <TeamSection />
-                    <WorksSection />
                     <ContactSection />
+                    <WorksSection />
+                    <TeamSection />
+                    <VisionSection />
+                    <HomeSection />
+                    <FooterHeader />
                 </SmoothScroll>
             </div>
 
