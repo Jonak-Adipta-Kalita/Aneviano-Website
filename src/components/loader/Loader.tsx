@@ -37,7 +37,7 @@ export default function Loader() {
             ref={ref}
             className="fixed inset-0 z-9999 flex flex-col items-center justify-center bg-neutral-950"
         >
-            <Logo className="w-72 text-gray-200 md:w-100 xl:w-125" />
+            <Logo className="w-72 text-[#FFFFF2] md:w-100 xl:w-125" />
             <p className="font-orbitron mx-10 mt-2 text-center text-lg text-gray-200/80 md:text-2xl">
                 Loading...
             </p>

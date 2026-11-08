@@ -11,44 +11,44 @@ import Loader from "@src/components/loader/Loader";
 import { LoaderProvider } from "@src/components/loader/LoaderContext";
 
 export default function Home() {
-	return (
-		<>
-			<script
-				dangerouslySetInnerHTML={{
-					__html: `
+    return (
+        <>
+            <script
+                dangerouslySetInnerHTML={{
+                    __html: `
 						history.scrollRestoration = "manual";
 						document.documentElement.classList.add("start-bottom");
 					`,
-				}}
-			/>
+                }}
+            />
 
-			<ScrollOnNavigate />
+            <ScrollOnNavigate />
 
-			<LoaderProvider>
-				<Loader />
-				<ScrollOnNavigate />
+            <LoaderProvider>
+                <Loader />
+                <ScrollOnNavigate />
 
-				<div className="relative z-10 flex min-h-full flex-col overflow-x-hidden">
-					<SmoothScroll>
-						<ContactSection />
-						<WorksSection />
-						<TeamSection />
-						<VisionSection />
-						<HomeSection />
-						<FooterHeader />
-						<StartAtBottom />
-					</SmoothScroll>
-				</div>
-			</LoaderProvider>
+                <div className="relative z-10 flex min-h-full flex-col overflow-x-hidden">
+                    <SmoothScroll>
+                        <ContactSection />
+                        <WorksSection />
+                        <TeamSection />
+                        <VisionSection />
+                        <HomeSection />
+                        <FooterHeader />
+                        <StartAtBottom />
+                    </SmoothScroll>
+                </div>
+            </LoaderProvider>
 
-			<script
-				dangerouslySetInnerHTML={{
-					__html: `
+            <script
+                dangerouslySetInnerHTML={{
+                    __html: `
 						window.scrollTo(0, document.documentElement.scrollHeight);
 						document.documentElement.classList.remove("start-bottom");
 					`,
-				}}
-			/>
-		</>
-	);
+                }}
+            />
+        </>
+    );
 }
