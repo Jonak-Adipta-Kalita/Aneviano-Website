@@ -88,7 +88,7 @@ export default function HomeSection() {
                     </p>
                 </div>
             </section>
-            <div id="home-bottom" />
+            <div id="home-pin" />
         </>
     );
 }

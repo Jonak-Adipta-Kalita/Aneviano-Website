@@ -49,13 +49,14 @@ export default function FooterHeader() {
                     key={nav}
                     type="button"
                     onClick={() =>
-                        lenis?.scrollTo(`#${nav.toLowerCase()}-bottom`, {
+                        lenis?.scrollTo(`#${nav.toLowerCase()}-pin`, {
                             lock: false,
                             duration: 1.2,
                         })
                     }
                     id="nav-btn"
-                    className="font-orbitron invisible relative cursor-pointer touch-manipulation rounded-2xl px-2 py-3 text-sm text-gray-400 transition-colors select-none after:absolute after:right-5 after:bottom-2 after:left-5 after:h-px after:origin-left after:scale-x-0 after:bg-current after:transition-transform after:duration-300 after:ease-out hover:text-gray-200 hover:after:scale-x-100 md:px-5 md:text-2xl"
+                    className="font-orbitron invisible relative cursor-pointer touch-manipulation rounded-2xl px-2 py-3 text-sm text-gray-400 transition-colors select-none after:absolute after:right-5 after:bottom-2 after:left-5 after:h-px after:origin-left after:scale-x-0 after:bg-current after:transition-transform after:duration-300 after:ease-out hover:text-gray-200 not-disabled:hover:after:scale-x-100 disabled:text-gray-700 disabled:hover:cursor-not-allowed md:px-5 md:text-2xl"
+                    disabled={nav == "Works" || nav == "Team"}
                 >
                     {nav}
                 </button>
