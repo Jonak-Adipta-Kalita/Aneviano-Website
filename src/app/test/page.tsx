@@ -8,87 +8,88 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 export default function ExperienceReverse() {
-	const experienceRef = useRef<HTMLDivElement>(null);
-	const middleRef = useRef<HTMLHeadingElement>(null);
-	const boxRef = useRef<HTMLDivElement>(null);
+    const experienceRef = useRef<HTMLDivElement>(null);
+    const middleRef = useRef<HTMLHeadingElement>(null);
+    const boxRef = useRef<HTMLDivElement>(null);
 
-	useGSAP(
-		() => {
-			// The page is read bottom -> top, so scroll progress 0 is the *top* of
-			// the pin range (finished effect) and 1 is the bottom (effect not started).
-			// The timeline therefore runs from "finished" to "not started" and is
-			// the mirror image of the original: total length 1.1, orange box takes
-			// the first 0.5, the zoom takes the last 1.0.
+    useGSAP(
+        () => {
+            // The page is read bottom -> top, so scroll progress 0 is the *top* of
+            // the pin range (finished effect) and 1 is the bottom (effect not started).
+            // The timeline therefore runs from "finished" to "not started" and is
+            // the mirror image of the original: total length 1.1, orange box takes
+            // the first 0.5, the zoom takes the last 1.0.
 
-			const exp = gsap.timeline({
-				scrollTrigger: {
-					trigger: experienceRef.current,
-					start: "top top",
-					end: "+=5000",
-					scrub: true,
-					markers: true, // remove in production
-					pin: experienceRef.current,
-				},
-			});
+            const exp = gsap.timeline({
+                scrollTrigger: {
+                    trigger: experienceRef.current,
+                    start: "top top",
+                    end: "+=5000",
+                    scrub: true,
+                    markers: true, // remove in production
+                    pin: experienceRef.current,
+                },
+            });
 
-			exp.fromTo(
-				boxRef.current,
-				{ scaleX: 1 },
-				{ scaleX: 0, ease: "none", duration: 0.5 },
-				0
-			);
+            exp.fromTo(
+                boxRef.current,
+                { scaleX: 1 },
+                { scaleX: 0, ease: "none", duration: 0.5 },
+                0
+            );
 
-			exp.fromTo(
-				middleRef.current,
-				{ "--progress1": 1 },
-				{ "--progress1": 0, ease: "none", duration: 1 },
-				0.1
-			);
-		},
-		{ scope: experienceRef }
-	);
+            exp.fromTo(
+                middleRef.current,
+                { "--progress1": 1 },
+                { "--progress1": 0, ease: "none", duration: 1 },
+                0.1
+            );
+        },
+        { scope: experienceRef }
+    );
 
-	return (
-		<>
-			{/* now ABOVE the experience */}
-			<section className="mb-4 h-screen w-full shrink-0 text-[5rem] text-gray-200">
-				another section
-			</section>
+    return (
+        <>
+            {/* now ABOVE the experience */}
+            <section className="mb-4 h-screen w-full shrink-0 text-[5rem] text-gray-200">
+                another section
+            </section>
 
-			<div
-				ref={experienceRef}
-				className="experience relative z-10 h-screen w-full shrink-0 overflow-hidden bg-white"
-			>
-				<div
-					ref={boxRef}
-					className="pointer-events-none absolute left-0 top-0 z-10 h-full w-full bg-[orange] opacity-70"
-				/>
+            <div
+                ref={experienceRef}
+                className="experience relative z-10 h-screen w-full shrink-0 overflow-hidden bg-white"
+            >
+                <div
+                    ref={boxRef}
+                    className="pointer-events-none absolute top-0 left-0 z-10 h-full w-full bg-[orange] opacity-70"
+                />
 
-				<div className="experience-show">
-					<h1 className="absolute left-[2%] top-[1%] my-[0.67em] font-['bold'] font-bold text-[3rem]">
-						Let Me show you
-					</h1>
+                <div className="experience-show">
+                    <h1 className="absolute top-[1%] left-[2%] my-[0.67em] font-['bold'] text-[3rem] font-bold">
+                        Let Me show you
+                    </h1>
 
-					<div className="flex h-screen w-full items-center justify-center">
-						<h1
-							ref={middleRef}
-							className="my-[0.67em] origin-[48.2%] whitespace-nowrap font-['bold'] font-bold text-[15rem]"
-							style={
-								{
-									"--progress1": 1,
-									transform: "scale(calc(var(--progress1) * 30))",
-								} as CSSProperties
-							}
-						>
-							Enter My World
-						</h1>
-					</div>
+                    <div className="flex h-screen w-full items-center justify-center">
+                        <h1
+                            ref={middleRef}
+                            className="my-[0.67em] origin-[48.2%] font-['bold'] text-[15rem] font-bold whitespace-nowrap"
+                            style={
+                                {
+                                    "--progress1": 1,
+                                    transform:
+                                        "scale(calc(var(--progress1) * 30))",
+                                } as CSSProperties
+                            }
+                        >
+                            Enter My World
+                        </h1>
+                    </div>
 
-					<h1 className="absolute bottom-[1%] right-[2%] my-[0.67em] font-['bold'] font-bold text-[3rem]">
-						My Magic Trick
-					</h1>
-				</div>
-			</div>
-		</>
-	);
+                    <h1 className="absolute right-[2%] bottom-[1%] my-[0.67em] font-['bold'] text-[3rem] font-bold">
+                        My Magic Trick
+                    </h1>
+                </div>
+            </div>
+        </>
+    );
 }

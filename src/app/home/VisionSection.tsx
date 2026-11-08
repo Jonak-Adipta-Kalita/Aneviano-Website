@@ -1,3 +1,8 @@
 export default function VisionSection() {
-	return <section id="vision" className="h-screen relative text-neutral-900"></section>;
+    return (
+        <section
+            id="vision"
+            className="relative h-screen text-neutral-900"
+        ></section>
+    );
 }
