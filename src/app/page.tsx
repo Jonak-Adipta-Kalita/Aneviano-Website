@@ -31,8 +31,8 @@ export default function Home() {
                 <div className="relative z-10 flex min-h-full flex-col overflow-x-hidden">
                     <SmoothScroll>
                         <ContactSection />
-                        <WorksSection />
                         <TeamSection />
+                        <WorksSection />
                         <VisionSection />
                         <HomeSection />
                         <FooterHeader />

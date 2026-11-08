@@ -11,7 +11,7 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function HomeSection() {
     const container = useRef<HTMLElement | null>(null);
-    const whiteLayerRef = useRef<HTMLDivElement | null>(null);
+    const layerRef = useRef<HTMLDivElement | null>(null);
     const logoRef = useRef<SVGSVGElement | null>(null);
 
     useGSAP(
@@ -29,7 +29,7 @@ export default function HomeSection() {
             });
 
             tl.fromTo(
-                whiteLayerRef.current,
+                layerRef.current,
                 { scaleX: 1 },
                 { scaleX: 0, ease: "none", duration: 0.7 },
                 0
@@ -40,6 +40,13 @@ export default function HomeSection() {
                 { "--progress1": 1 },
                 { "--progress1": 0, ease: "none", duration: 1 },
                 0.5
+            );
+
+            tl.fromTo(
+                logoRef.current,
+                { color: "#0e0e0d" },
+                { color: "#e5e7eb", ease: "none", duration: 1 },
+                1
             );
         },
         { scope: container }
@@ -53,8 +60,8 @@ export default function HomeSection() {
                 className="relative flex h-screen shrink-0 items-center justify-center overflow-hidden"
             >
                 <div
-                    ref={whiteLayerRef}
-                    className="pointer-events-none absolute top-0 left-0 z-50 h-full w-full bg-gray-200"
+                    ref={layerRef}
+                    className="pointer-events-none absolute top-0 left-0 z-50 h-full w-full bg-[#0e0e0d]"
                 />
 
                 <div
@@ -62,7 +69,7 @@ export default function HomeSection() {
                     id="home-body"
                 >
                     <Logo
-                        className="w-72 text-gray-200 md:w-100 xl:w-125"
+                        className="w-72 md:w-100 xl:w-125"
                         ref={logoRef}
                         style={
                             {
