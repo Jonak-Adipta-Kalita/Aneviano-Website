@@ -28,7 +28,7 @@ export default function Home() {
 				<Loader />
 				<ScrollOnNavigate />
 
-				<div className="relative z-10 flex min-h-full flex-col">
+				<div className="relative z-10 flex min-h-full flex-col overflow-x-hidden">
 					<SmoothScroll>
 						<ContactSection />
 						<WorksSection />
