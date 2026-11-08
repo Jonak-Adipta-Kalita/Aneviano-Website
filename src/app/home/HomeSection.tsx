@@ -39,47 +39,49 @@ export default function HomeSection() {
                 logoRef.current,
                 { "--progress1": 1 },
                 { "--progress1": 0, ease: "none", duration: 1 },
-                0.1
+                0.5
             );
         },
         { scope: container }
     );
 
     return (
-        <section
-            ref={container}
-            id="home"
-            className="relative flex h-screen shrink-0 items-center justify-center overflow-hidden"
-        >
-            <div
-                ref={whiteLayerRef}
-                className="pointer-events-none absolute top-0 left-0 z-50 h-full w-full bg-gray-200"
-            />
-
-            <div
-                className="absolute inset-0 flex flex-col items-center justify-center"
-                id="home-body"
+        <>
+            <section
+                ref={container}
+                id="home"
+                className="relative flex h-screen shrink-0 items-center justify-center overflow-hidden"
             >
-                <Logo
-                    className="w-72 text-gray-200 md:w-100 xl:w-125"
-                    ref={logoRef}
-                    style={
-                        {
-                            "--progress1": 0,
-                            transform: "scale(calc(1 + var(--progress1) * 30))",
-                        } as CSSProperties
-                    }
+                <div
+                    ref={whiteLayerRef}
+                    className="pointer-events-none absolute top-0 left-0 z-50 h-full w-full bg-gray-200"
                 />
-                <p className="font-orbitron mx-10 mt-2 text-center text-lg text-gray-200/80 md:text-2xl">
-                    <Typewriter
-                        content={
-                            "Building Beyond Boundaries, Pushing the limits of Innovation and Ingenuity"
+
+                <div
+                    className="absolute inset-0 flex flex-col items-center justify-center"
+                    id="home-body"
+                >
+                    <Logo
+                        className="w-72 text-gray-200 md:w-100 xl:w-125"
+                        ref={logoRef}
+                        style={
+                            {
+                                "--progress1": 0,
+                                transform:
+                                    "scale(calc(1 + var(--progress1) * 30))",
+                            } as CSSProperties
                         }
                     />
-                </p>
-            </div>
-
+                    <p className="font-orbitron mx-10 mt-2 text-center text-lg text-gray-200/80 md:text-2xl">
+                        <Typewriter
+                            content={
+                                "Building Beyond Boundaries, Pushing the limits of Innovation and Ingenuity"
+                            }
+                        />
+                    </p>
+                </div>
+            </section>
             <div id="home-bottom" />
-        </section>
+        </>
     );
 }
