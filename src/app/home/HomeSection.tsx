@@ -48,6 +48,7 @@ export default function HomeSection() {
 	return (
 		<section
 			ref={container}
+			id="home"
 			className="relative flex h-screen items-center justify-center shrink-0 overflow-hidden"
 		>
 			<div ref={whiteLayerRef} className="pointer-events-none absolute top-0 left-0 z-50 h-full w-full bg-[#FFFFF2]" />
@@ -72,6 +73,7 @@ export default function HomeSection() {
 					/>
 				</p>
 			</div>
+			<div id="home-bottom" />
 		</section>
 	);
 }

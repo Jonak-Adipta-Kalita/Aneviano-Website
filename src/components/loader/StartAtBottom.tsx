@@ -23,7 +23,7 @@ export default function StartAtBottom() {
 
 		const toBottom = () => {
 			lenis.resize();
-			lenis.scrollTo("#bottom", { immediate: true, force: true });
+			lenis.scrollTo("#home-bottom", { immediate: true, force: true });
 			ScrollTrigger.update();
 		};
 

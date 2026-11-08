@@ -36,7 +36,6 @@ export default function Home() {
 						<VisionSection />
 						<HomeSection />
 						<FooterHeader />
-						<div id="bottom" />
 						<StartAtBottom />
 					</SmoothScroll>
 				</div>
