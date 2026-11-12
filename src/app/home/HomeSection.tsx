@@ -62,7 +62,17 @@ export default function HomeSection() {
                 <div
                     ref={layerRef}
                     className="pointer-events-none absolute top-0 left-0 z-50 h-full w-full bg-[#0e0e0d]"
-                />
+                >
+                    <div className="pointer-events-none absolute z-20 flex min-h-dvh w-full items-center justify-center overflow-hidden">
+                        <p
+                            className="font-ubuntu text-center leading-none font-bold tracking-tighter text-transparent opacity-[0.5] [-webkit-text-stroke:3px_#A9D4FF]"
+                            style={{ fontSize: "clamp(80px, 18vw, 300px)" }}
+                            aria-hidden="true"
+                        >
+                            THE VISION
+                        </p>
+                    </div>
+                </div>
 
                 <div
                     className="absolute inset-0 flex flex-col items-center justify-center"

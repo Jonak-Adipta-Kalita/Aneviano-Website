@@ -42,7 +42,7 @@ export default function FooterHeader() {
     return (
         <nav
             ref={container}
-            className="bg-base fixed bottom-0 left-1/2 z-50 mb-5 flex max-w-fit -translate-x-1/2 items-center justify-evenly space-x-3 rounded-2xl p-3"
+            className="bg-base fixed bottom-0 left-1/2 z-120 mb-5 flex max-w-fit -translate-x-1/2 items-center justify-evenly space-x-3 rounded-2xl p-3"
         >
             {NAV_ITEMS.map((nav) => (
                 <button
