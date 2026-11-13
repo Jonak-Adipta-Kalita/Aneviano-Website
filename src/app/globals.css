@@ -7,8 +7,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-    --font-ubuntu: var(--font-ubuntu-sans);
-    --font-orbitron: var(--font-oribtron);
+    --font-ubuntu: var(--font-ubuntu-loaded);
+    --font-orbitron: var(--font-orbitron-loaded);
 
     --color-base: #0f0d0b;
 

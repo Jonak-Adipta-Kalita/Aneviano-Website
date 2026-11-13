@@ -8,12 +8,14 @@ import { StarsBackground } from "@src/components/ui/stars-background";
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
 const fontUbuntu = Ubuntu({
-    weight: "500",
+    subsets: ["latin"],
+    weight: ["400", "500", "700"],
+    variable: "--font-ubuntu-loaded",
 });
 
 const fontOrbitron = Orbitron({
     subsets: ["latin"],
-    variable: "--font-orbitron",
+    variable: "--font-orbitron-loaded",
 });
 
 export const metadata: Metadata = {
@@ -28,9 +30,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             className={cn(
                 "scrollbar-hidden scrollbar-hover:scrollbar-thumb-neutral-700 h-full scrollbar-thin scrollbar-thumb-neutral-800 scrollbar-track-transparent",
                 "antialiased",
-                fontUbuntu.className,
-                fontOrbitron.className,
-                "font-sans",
+                fontOrbitron.variable,
+                fontUbuntu.variable,
                 geist.variable
             )}
             suppressHydrationWarning

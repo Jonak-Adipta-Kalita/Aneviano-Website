@@ -11,6 +11,7 @@ export const NAV_ITEMS = [
     "Vision",
     "Works",
     "Team",
+    "Sponsors",
     "Contact",
 ] as const;
 
@@ -42,7 +43,7 @@ export default function FooterHeader() {
     return (
         <nav
             ref={container}
-            className="bg-base fixed bottom-0 left-1/2 z-120 mb-5 flex max-w-fit -translate-x-1/2 items-center justify-evenly space-x-3 rounded-2xl p-3"
+            className="bg-base fixed bottom-0 left-1/2 z-120 mb-5 hidden max-w-fit -translate-x-1/2 items-center justify-evenly space-x-3 rounded-2xl p-3 md:flex"
         >
             {NAV_ITEMS.map((nav) => (
                 <button
@@ -56,7 +57,12 @@ export default function FooterHeader() {
                     }
                     id="nav-btn"
                     className="font-orbitron invisible relative cursor-pointer touch-manipulation rounded-2xl px-2 py-3 text-sm text-gray-400 transition-colors select-none after:absolute after:right-5 after:bottom-2 after:left-5 after:h-px after:origin-left after:scale-x-0 after:bg-current after:transition-transform after:duration-300 after:ease-out hover:text-gray-200 not-disabled:hover:after:scale-x-100 disabled:text-gray-700 disabled:hover:cursor-not-allowed md:px-5 md:text-2xl"
-                    disabled={nav == "Works" || nav == "Team"}
+                    disabled={
+                        nav == "Works" ||
+                        nav == "Team" ||
+                        nav == "Contact" ||
+                        nav == "Sponsors"
+                    }
                 >
                     {nav}
                 </button>
