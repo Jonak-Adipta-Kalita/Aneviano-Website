@@ -30,8 +30,8 @@ export default function Home() {
 
                 <div className="relative z-10 flex min-h-full flex-col overflow-x-hidden">
                     <SmoothScroll>
-                        <ContactSection />
-                        {/* <TeamSection />
+                        {/* <ContactSection />
+                        <TeamSection />
                         <WorksSection /> */}
                         <VisionSection />
                         <HomeSection />

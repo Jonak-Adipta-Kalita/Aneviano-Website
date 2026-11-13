@@ -26,7 +26,6 @@ export default function Typewriter({
                 ease: "none",
                 onUpdate: () =>
                     setDisplay(content.slice(0, Math.round(counter.current.i))),
-                scrollTrigger: {}, // TODO
             });
         },
         { dependencies: [content] }

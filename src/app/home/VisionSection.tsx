@@ -62,14 +62,14 @@ export default function VisionSection() {
                                     className="group cursor-pointer border-b border-gray-200/30 py-4 transition-all duration-150 ease-in-out sm:py-5 lg:py-7 2xl:py-10"
                                 >
                                     <div className="flex w-full items-center gap-4 p-5 font-extrabold sm:gap-6 sm:p-6 lg:w-fit lg:gap-12 lg:p-8 2xl:gap-20 2xl:p-10">
-                                        <p className="shrink-0 text-center font-mono text-2xl text-sky-200 sm:text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl">
+                                        <p className="shrink-0 text-center font-mono text-2xl text-sky-300 sm:text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl">
                                             {String(i + 1).padStart(2, "0")}
                                         </p>
                                         <div className="min-w-0 space-y-1 lg:space-y-2">
                                             <p className="font-ubuntu text-left text-2xl wrap-break-word sm:text-3xl md:text-4xl lg:text-center lg:text-5xl xl:text-6xl 2xl:text-7xl">
                                                 {work[0]}
                                             </p>
-                                            <p className="font-ubuntu text-center text-sm font-semibold text-sky-200 md:text-left md:text-lg lg:text-xl 2xl:text-2xl">
+                                            <p className="font-ubuntu text-center text-sm font-semibold text-sky-300 md:text-left md:text-lg lg:text-xl 2xl:text-2xl">
                                                 {work[1]}
                                             </p>
                                         </div>
